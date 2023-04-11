@@ -29,7 +29,11 @@ class this_is_coding_test_for_getting_job:
         46
         '''
         n, m, k = map(int, args[0].split())
+        if not (2 <= n <= 1000 or 1<= m <= 10000 or 1 <= k <= 10000):
+            raise "n, m, k 입력값 범위를 벗어났습니다."
         nums = sorted(list(map(int, args[1].split())))
+        if not (1<=nums[-2]<10000):
+            raise "nums의 입력값이 범위를 벗어났습니다."
         count = m//(k+1)*k + m % (k+1)
         answer = nums[-1]*count + nums[-2]*(m-count)
         print(answer)
@@ -46,7 +50,12 @@ class this_is_coding_test_for_getting_job:
         3
         '''
         n, m = map(int, args[0].split())
+        if not (1 <= n <= 100 or 1<= m <= 100):
+            raise "n, m, k 입력값 범위를 벗어났습니다."
+        
+        # 입력값 테스트 추가해야함.
         mat = [min(map(int, args[idx].split())) for idx in range(1, n+1)]
+        
         print(max(mat))
         return
 
@@ -61,7 +70,7 @@ class this_is_coding_test_for_getting_job:
         '''
         n, k = map(int, args[0].split())
         if not (2 <= n <= 100000 or 2 <= k <= 100000):
-            raise "n or k 입력값이 범위를 벗어났습니다."
+            raise "n or k 입력값 범위를 벗어났습니다."
         elif n < k :
             raise "n보다 k 값이 더 큽니다."
         cnt = 0
@@ -74,6 +83,7 @@ class this_is_coding_test_for_getting_job:
         print(cnt)
         return
 
+    ## 예외인 경우도 docTEST에 넣어서 테스트!
 
 if __name__ == "__main__":
     import doctest
