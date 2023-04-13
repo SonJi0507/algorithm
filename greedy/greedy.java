@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class greedy {
     public static void main(String[] args) {
         thisIsCodingTestForGettingJob codingTest = new thisIsCodingTestForGettingJob();
-        codingTest.chapter3q3();
+        codingTest.chapter3q4();
     }
 }
 
@@ -68,5 +68,29 @@ class thisIsCodingTestForGettingJob {
             result = Math.max(result, min_value);
         }
         System.out.println(result);
+        return;
+    }
+
+    /*
+     * P/99 1이 될 때까지
+     * === input example ===
+25 5
+     * === output example ===
+     * 2
+     */
+    void chapter3q4() {
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int cnt = 0;
+        while ( n != 1) {
+            cnt++;
+            if ( n % k == 0){
+                n = n/k;
+            } else {
+                n--;
+            }
+        }
+        System.out.println(cnt);
+        return;
     }
 }
